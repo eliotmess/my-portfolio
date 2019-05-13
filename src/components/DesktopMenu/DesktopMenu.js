@@ -4,27 +4,41 @@ import styled from 'styled-components';
 import homeBtn from 'assets/images/home-btn.svg';
 
 const DesktopMenuWrapper = styled.ul`
+  display: none;
   position: fixed;
   bottom: 12vh;
   left: 7vw;
-  display: flex;
   padding: 0;
   margin: 0;
+
+  ${({ theme }) => theme.mq.tablet} {
+    display: flex;
+  }
 `;
 
 const DesktopMenuLink = styled.li`
   list-style: none;
-  height: 34px;
+  height: 27px;
   margin: 0 10px;
-  font-size: 25px;
+  font-size: ${({ theme }) => theme.font.size.s};
+
+  ${({ theme }) => theme.mq.huge} {
+    font-size: ${({ theme }) => theme.font.size.m};
+    height: 34px;
+  }
 `;
 
 const Home = styled.img`
-  height: 30px;
+  height: 25px;
   width: auto;
   border: none;
   vertical-align: bottom;
   padding-bottom: 8px;
+
+  ${({ theme }) => theme.mq.huge} {
+    height: 30px;
+    padding-bottom: 8px;
+  }
 `;
 
 const Link = styled.a`
@@ -32,7 +46,7 @@ const Link = styled.a`
   transition: all 0.35s ease-in-out;
   color: ${({ theme }) => theme.pink};
   font-family: ${({ theme }) => theme.font.family.nunito};
-  font-weight: ${({ theme }) => theme.font.weight.semiBold};
+  font-weight: ${({ theme }) => theme.font.weight.bold};
 `;
 
 const Underline = styled.span`

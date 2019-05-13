@@ -13,49 +13,55 @@ const CubePan = styled.div`
   opacity: 0.8;
   top: 0;
   left: 0;
-  height: 300px;
-  width: 300px;
+  height: 230px;
+  width: 230px;
   background-size: cover;
   background-image: url(${props => props.img});
-  transform: ${props => props.transform};
+  transform: ${props => props.transform} translateZ(115px);
+
+  ${({ theme }) => theme.mq.huge} {
+    height: 300px;
+    width: 300px;
+    transform: ${props => props.transform} translateZ(150px);
+  }
 `;
 
 const cubePans = [
   {
     img: `${cube1}`,
-    transform: 'translateX(-50%) translateY(-50%) translateZ(150px)',
+    transform: 'translateX(-50%) translateY(-50%)',
   },
   {
     img: `${cube2}`,
-    transform:
-      'translateX(-50%) translateY(-50%) rotateY(90deg) translateZ(150px)',
+    transform: 'translateX(-50%) translateY(-50%) rotateY(90deg)',
   },
   {
     img: `${cube3}`,
-    transform:
-      'translateX(-50%) translateY(-50%) rotateY(-90deg) translateZ(150px)',
+    transform: 'translateX(-50%) translateY(-50%) rotateY(-90deg)',
   },
   {
     img: `${cube4}`,
-    transform:
-      'translateX(-50%) translateY(-50%) rotateX(90deg) translateZ(150px)',
+    transform: 'translateX(-50%) translateY(-50%) rotateX(90deg)',
   },
   {
     img: `${cube5}`,
-    transform:
-      'translateX(-50%) translateY(-50%) rotateX(-90deg) translateZ(150px)',
+    transform: 'translateX(-50%) translateY(-50%) rotateX(-90deg)',
   },
   {
     img: `${cube6}`,
-    transform:
-      'translateX(-50%) translateY(-50%) rotateY(-180deg) translateZ(150px)',
+    transform: 'translateX(-50%) translateY(-50%) rotateY(-180deg)',
   },
 ];
 
 const CubeWrapper = styled.div`
+  display: none;
   height: 100vh;
   width: 130vh;
   z-index: 99;
+
+  ${({ theme }) => theme.mq.tablet} {
+    display: block;
+  }
 `;
 
 class HeroCube extends Component {

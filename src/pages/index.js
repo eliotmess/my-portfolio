@@ -4,6 +4,7 @@ import ReactFullpage from '@fullpage/react-fullpage';
 import MainTemplate from 'templates/MainTemplate/MainTemplate';
 import DesktopMenu from 'components/DesktopMenu/DesktopMenu';
 import Hero from 'pages/Hero';
+import About from 'pages/About';
 
 const Section = styled.div`
   height: 100vh;
@@ -35,7 +36,7 @@ class IndexPage extends Component {
                   <Hero />
                 </Section>
                 <Section className="section" data-anchor="me">
-                  <h1>moja $trona</h1>
+                  <About active={activeSection} />
                 </Section>
                 <Section className="section" data-anchor="works">
                   <h1>moja $trona</h1>
@@ -50,6 +51,9 @@ class IndexPage extends Component {
           anchors={['home', 'me', 'works', 'contact']}
           onLeave={(origin, destination) => this.setActive(destination.anchor)}
           licenseKey="MY_KEY"
+          responsiveWidth="768"
+          normalScrollElements="#skillsList"
+          scrollOverflow
         />
         <DesktopMenu active={activeSection} />
       </MainTemplate>

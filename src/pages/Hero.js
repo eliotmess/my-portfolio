@@ -3,14 +3,11 @@ import styled from 'styled-components';
 import HeroBar from 'components/HeroBar/HeroBar';
 import HeroHeader from 'components/HeroHeader/HeroHeader';
 import HeroCube from 'components/HeroCube/HeroCube';
+import HeroArrow from 'components/HeroArrow/HeroArrow';
 
 const HeroWrapper = styled.div`
   width: 80vw;
   margin-left: 12vw;
-`;
-
-const HeroArrow = styled.div`
-  max-width: 16px;
 `;
 
 function Hero() {
