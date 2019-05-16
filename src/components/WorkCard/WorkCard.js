@@ -24,6 +24,7 @@ const WorkCardWrapper = styled.div`
 const WorkCardImg = styled.div`
   height: 61.8%;
   width: 100%;
+  max-height: 380px;
   background: ${({ theme }) => theme.secondaryDark};
 `;
 
