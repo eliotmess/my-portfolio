@@ -20,9 +20,9 @@ const CubePan = styled.div`
   transform: ${props => props.transform} translateZ(115px);
 
   ${({ theme }) => theme.mq.huge} {
-    height: 300px;
-    width: 300px;
-    transform: ${props => props.transform} translateZ(150px);
+    height: 280px;
+    width: 280px;
+    transform: ${props => props.transform} translateZ(140px);
   }
 `;
 
@@ -56,8 +56,12 @@ const cubePans = [
 const CubeWrapper = styled.div`
   display: none;
   height: 100vh;
-  width: 130vh;
+  width: 100vw;
   z-index: 99;
+
+  &:hover {
+    cursor: ${props => (props.grabbed ? 'grabbing' : 'grab')};
+  }
 
   ${({ theme }) => theme.mq.tablet} {
     display: block;
@@ -70,8 +74,12 @@ class HeroCube extends Component {
     this.state = {
       midX: 0,
       midY: 0,
-      animate: true,
+      animate: false,
     };
+  }
+
+  componentDidMount() {
+    this.setState({ animate: true });
   }
 
   onRotate() {
@@ -143,6 +151,7 @@ class HeroCube extends Component {
         onMouseMove={e => this.handleRotate(e)}
         onMouseUp={() => !animate && this.onStopRotate()}
         onMouseDown={e => this.onRotate(e)}
+        grabbed={!animate}
       >
         <Section id="cube">
           {cubePans.map(pan => (

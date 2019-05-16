@@ -45,7 +45,7 @@ const BarContact = styled.a`
   }
 `;
 
-function HeroBar() {
+const HeroBar = () => {
   return (
     <BarWrapper>
       <BarSocial href="https://github.com/eliotmess">
@@ -54,9 +54,13 @@ function HeroBar() {
       <BarSocial href="https://www.linkedin.com/in/olejniczag">
         <img src={Linkedin} alt="linkedin" />
       </BarSocial>
-      <BarContact href="https://github.com/eliotmess">contact me</BarContact>
+      <BarContact
+        onClick={() => window.scrollTo(0, document.body.scrollHeight)}
+      >
+        contact me
+      </BarContact>
     </BarWrapper>
   );
-}
+};
 
 export default HeroBar;

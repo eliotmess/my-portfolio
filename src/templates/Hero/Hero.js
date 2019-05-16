@@ -10,7 +10,7 @@ const HeroWrapper = styled.div`
   margin-left: 12vw;
 `;
 
-function Hero() {
+const Hero = () => {
   return (
     <HeroWrapper>
       <HeroBar />
@@ -19,6 +19,6 @@ function Hero() {
       <HeroArrow />
     </HeroWrapper>
   );
-}
+};
 
 export default Hero;

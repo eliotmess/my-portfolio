@@ -2,8 +2,11 @@ import React from 'react';
 import styled from 'styled-components';
 
 const AboutMeWrapper = styled.div`
-  width: 60%;
-  padding-left: 50px;
+  width: 100%;
+
+  ${({ theme }) => theme.mq.tablet} {
+    width: 50%;
+  }
 `;
 
 const HeadingBig = styled.h1`
@@ -13,7 +16,7 @@ const HeadingBig = styled.h1`
   letter-spacing: 6px;
   margin: 0 0 10px 0;
 
-  ${({ theme }) => theme.mq.tablet} {
+  ${({ theme }) => theme.mq.wide} {
     font-size: ${({ theme }) => theme.font.size.xl};
   }
 `;
@@ -42,29 +45,37 @@ const AboutMeColumn = styled.div`
     top: 15%;
     z-index: 1;
   }
+
+  ${({ theme }) => theme.mq.tablet} {
+    width: 100%;
+  }
 `;
 
 const AboutMeText = styled.p`
   color: ${({ theme }) => theme.whitey};
-  font-size: ${({ theme }) => theme.font.size.m};
+  font-size: ${({ theme }) => theme.font.size.xs};
   text-align: justify;
   position: relative;
   z-index: 5;
+
+  ${({ theme }) => theme.mq.wide} {
+    font-size: ${({ theme }) => theme.font.size.s};
+  }
 `;
 
 function AboutMe() {
   return (
     <AboutMeWrapper>
-      <HeadingBig>about me_</HeadingBig>
+      <HeadingBig>about me</HeadingBig>
       <AboutMeColumn>
         <AboutMeText>
-          Moim celem jest współtworzenie produktów, dających użytkownikom
-          odpowiedzi, jakich poszukiwali oraz pozytywne, warte zapamiętania
-          doświadczenia. Umiejętności z zakresu web developmentu rozwijałem
-          samodzielnie, jak też pod okiem doświadczonych programistów, tworząc
-          m.in. funkcjonalne aplikacje typu CRUD. analityczne podejście do
-          rozwiązywanych problemów, niezaspokojoną chęć zdobywania wiedzy i
-          wrażliwość estetyczną.
+          My goal is to co-create digital products that give users the answers
+          they need <em>while</em> providing remarkable experiences. I{' '}
+          <em>deployed</em> my web development skills through self-study, as
+          well as under the supervision of experienced coders — developing,
+          among others, <em>functional</em>, progressive web apps. I pay great
+          attention to details, usability, use of reliable and up-to-date tools
+          and aesthetics of both, <em>code</em> and layout.
         </AboutMeText>
       </AboutMeColumn>
     </AboutMeWrapper>

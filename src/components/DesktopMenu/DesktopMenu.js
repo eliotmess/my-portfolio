@@ -20,10 +20,10 @@ const DesktopMenuLink = styled.li`
   list-style: none;
   height: 27px;
   margin: 0 10px;
-  font-size: ${({ theme }) => theme.font.size.s};
+  font-size: ${({ theme }) => theme.font.size.xs};
 
   ${({ theme }) => theme.mq.huge} {
-    font-size: ${({ theme }) => theme.font.size.m};
+    font-size: ${({ theme }) => theme.font.size.s};
     height: 34px;
   }
 `;

@@ -5,23 +5,35 @@ import uuid from 'uuid';
 import { throttle } from 'lodash';
 
 const SkillsWrapper = styled.div`
-  overflow: auto;
+  overflow-y: scroll;
+  overflow-x: scroll;
   position: relative;
   padding-left: 10px;
-  top: -11%;
+  top: 6%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 20;
-  height: 120%;
-  width: 45%;
+  height: 115%;
+  width: 55%;
   background: ${({ theme }) => theme.primary};
 
   &::-webkit-scrollbar-thumb {
     background: ${({ theme }) => theme.primary};
   }
 
+  &::-webkit-scrollbar-corner {
+    background: ${({ theme }) => theme.primary};
+  }
+
   &::-webkit-scrollbar {
     opacity: 0;
+    background: ${({ theme }) => theme.primary};
+  }
+
+  ${({ theme }) => theme.mq.tablet} {
+    width: 45%;
+    height: 120%;
+    top: -10%;
   }
 `;
 
@@ -33,9 +45,25 @@ const SkillsListWrapper = styled.ul`
 
 const SkillsListElement = styled.li`
   color: ${({ theme }) => theme.green};
-  font-size: ${({ theme }) => theme.font.size.m};
-  line-height: 1.7;
+  font-size: ${({ theme }) => theme.font.size.s};
+  line-height: 1.4;
   list-style: none;
+
+  &:hover {
+    cursor: ns-resize;
+  }
+
+  ${({ theme }) => theme.mq.tablet} {
+    font-size: ${({ theme }) => theme.font.size.xs};
+  }
+
+  ${({ theme }) => theme.mq.wide} {
+    font-size: ${({ theme }) => theme.font.size.s};
+  }
+
+  ${({ theme }) => theme.mq.huge} {
+    line-height: 1.7;
+  }
 `;
 
 const mySkills = [
@@ -119,10 +147,12 @@ class SkillsList extends Component {
   }
 
   handleManualScrollOn() {
+    this.skills.current.classList.add('skillsList');
     this.setState({ animateList: false });
   }
 
   handleManualScrollOff() {
+    this.skills.current.classList.remove('skillsList');
     const scrollTop = this.skills.current.scrollTop;
     this.setState({ animateList: true, scrollTop });
   }
@@ -133,9 +163,10 @@ class SkillsList extends Component {
       <SkillsWrapper
         onScroll={() => this.handleScrolling()}
         onMouseEnter={() => this.handleManualScrollOn()}
+        onTouchStart={() => this.handleManualScrollOn()}
         onMouseLeave={() => this.handleManualScrollOff()}
+        onTouchMove={() => this.handleManualScrollOff()}
         ref={this.skills}
-        id="skillsList"
       >
         <SkillsListWrapper>
           {skills.map(el => (

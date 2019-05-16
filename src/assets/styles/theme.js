@@ -7,11 +7,11 @@ export const theme = {
   whitey: '#f8f8f2',
   font: {
     size: {
-      xxxs: '.9rem',
-      xxs: '1.2rem',
-      xs: '1.4rem',
-      s: '2rem',
-      m: '2.5rem',
+      xxxs: '1.2rem',
+      xxs: '1.5rem',
+      xs: '2rem',
+      s: '2.5rem',
+      m: '4rem',
       l: '5rem',
       xl: '5.5rem',
       xxl: '7.2rem',
@@ -27,8 +27,9 @@ export const theme = {
     },
   },
   mq: {
-    tablet: `@media (min-width: 768px)`,
+    tablet: `@media (min-width: 796px)`,
     desktop: `@media (min-width: 1024px)`,
-    huge: `@media(min-width: 1440px)`,
+    wide: `@media (min-width: 1280px)`,
+    huge: `@media(min-width: 1800px)`,
   },
 };

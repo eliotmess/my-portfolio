@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import ReactFullpage from '@fullpage/react-fullpage';
+// import 'fullpage.js/vendors/scrolloverflow';
 import MainTemplate from 'templates/MainTemplate/MainTemplate';
 import DesktopMenu from 'components/DesktopMenu/DesktopMenu';
-import Hero from 'pages/Hero';
-import About from 'pages/About';
+import Hero from 'templates/Hero/Hero';
+import About from 'templates/About/About';
+import Works from 'templates/Works/Works';
+import Contact from 'templates/Contact/Contact';
 
-const Section = styled.div`
-  height: 100vh;
-  position: relative;
-`;
+const Section = styled.div``;
 
 class IndexPage extends Component {
   constructor(props) {
@@ -23,6 +23,12 @@ class IndexPage extends Component {
     this.setState({ activeSection });
   };
 
+  handleReload = () => {
+    setTimeout(() => {
+      location.reload();
+    }, 100);
+  };
+
   render() {
     const { activeSection } = this.state;
     return (
@@ -32,17 +38,17 @@ class IndexPage extends Component {
           render={() => {
             return (
               <ReactFullpage.Wrapper>
-                <Section className="section" data-anchor="home">
-                  <Hero />
+                <Section className="section">
+                  <Hero data-anchor="home" />
                 </Section>
-                <Section className="section" data-anchor="me">
-                  <About active={activeSection} />
+                <Section className="section">
+                  <About data-anchor="me" active={activeSection} />
                 </Section>
-                <Section className="section" data-anchor="works">
-                  <h1>moja $trona</h1>
+                <Section className="section">
+                  <Works data-anchor="works" />
                 </Section>
-                <Section className="section" data-anchor="contact">
-                  <h1>moja $trona</h1>
+                <Section className="section">
+                  <Contact data-anchor="contact" />
                 </Section>
               </ReactFullpage.Wrapper>
             );
@@ -50,10 +56,13 @@ class IndexPage extends Component {
           menu="#menu"
           anchors={['home', 'me', 'works', 'contact']}
           onLeave={(origin, destination) => this.setActive(destination.anchor)}
+          afterResize={() => this.handleReload()}
           licenseKey="MY_KEY"
-          responsiveWidth="768"
-          normalScrollElements="#skillsList"
-          scrollOverflow
+          responsiveWidth="796"
+          // responsiveHeight="900"
+          normalScrollElements=".skillsList"
+          continuousHorizontal
+          // scrollOverflow
         />
         <DesktopMenu active={activeSection} />
       </MainTemplate>
