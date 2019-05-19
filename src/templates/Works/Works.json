@@ -1,0 +1,94 @@
+[
+    {
+      "id": "10",
+      "works": [
+        {
+          "name": "v-dreams e-commerce",
+          "date": "03.2019",
+          "demo": "https://google.com",
+          "img": "works/works_portfolio.jpg",
+          "github": "https://google.com",
+          "id": "3",
+          "tech": [
+            "HTML5",
+            "CSS3",
+            "Sass (SCSS)",
+            "React.js",
+            "JS (ES6+)",
+            "Redux",
+            "Firebase"
+          ]
+        },
+        {
+          "name": "this site here",
+          "date": "05.2019",
+          "demo": "https://google.com",
+          "img": "works/works_portfolio.jpg",
+          "github": "https://google.com",
+          "id": "1",
+          "tech": [
+            "Gatsby.js",
+            "styled components",
+            "JS (ES6+)",
+            "React.js",
+            "HTML5"
+          ]
+        },
+        {
+          "name": "v-dreams e-commerce",
+          "date": "03.2019",
+          "demo": "https://google.com",
+          "img": "works/works_portfolio.jpg",
+          "github": "https://google.com",
+          "id": "2",
+          "tech": [
+            "React.js",
+            "Redux",
+            "JS (ES6+)",
+            "HTML5",
+            "Sass (SCSS)",
+            "Firebase"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "11",
+      "works": [
+        {
+          "name": "v-dreams e-commerce",
+          "date": "03.2019",
+          "demo": "https://google.com",
+          "img": "works/works_portfolio.jpg",
+          "github": "https://google.com",
+          "id": "4",
+          "tech": [
+            "HTML5",
+            "CSS3",
+            "Sass (SCSS)",
+            "React.js",
+            "JS (ES6+)",
+            "Redux",
+            "Firebase"
+          ]
+        },
+        {
+          "name": "v-dreams e-commerce",
+          "date": "03.2019",
+          "demo": "https://google.com",
+          "img": "works/works_portfolio.jpg",
+          "github": "https://google.com",
+          "id": "5",
+          "tech": [
+            "HTML5",
+            "CSS3",
+            "Sass (SCSS)",
+            "React.js",
+            "JS (ES6+)",
+            "Redux",
+            "Firebase"
+          ]
+        }
+      ]
+    }
+]

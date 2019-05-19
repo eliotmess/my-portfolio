@@ -70,12 +70,12 @@ function AboutMe() {
       <AboutMeColumn>
         <AboutMeText>
           My goal is to co-create digital products that give users the answers
-          they need <em>while</em> providing remarkable experiences. I{' '}
-          <em>deployed</em> my web development skills through self-study, as
-          well as under the supervision of experienced coders — developing,
-          among others, <em>functional</em>, progressive web apps. I pay great
-          attention to details, usability, use of reliable and up-to-date tools
-          and aesthetics of both, <em>code</em> and layout.
+          they need while providing remarkable experiences. I deployed my web
+          development skills through self-study, as well as under the
+          supervision of experienced coders. I built, among others, functional,
+          progressive web applications. I pay great attention to details, user
+          experience, use of reliable and modern tools and aesthetics of both
+          code and layout.
         </AboutMeText>
       </AboutMeColumn>
     </AboutMeWrapper>

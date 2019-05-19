@@ -7,6 +7,7 @@ import HeroArrow from 'components/HeroArrow/HeroArrow';
 
 const HeroWrapper = styled.div`
   width: 80vw;
+  height: 100vh;
   margin-left: 12vw;
 `;
 

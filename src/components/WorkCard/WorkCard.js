@@ -13,19 +13,27 @@ const WorkCardWrapper = styled.div`
 
   ${({ theme }) => theme.mq.tablet} {
     width: 48%;
-    margin: 0;
+    margin: 0 1%;
   }
 
   ${({ theme }) => theme.mq.wide} {
     width: 32%;
+    margin: 0 1.33%;
   }
 `;
 
 const WorkCardImg = styled.div`
   height: 61.8%;
   width: 100%;
-  max-height: 380px;
-  background: ${({ theme }) => theme.secondaryDark};
+  max-height: 370px;
+  overflow: hidden;
+  background: ${({ theme }) => theme.primary};
+`;
+
+const WorkCardImgSample = styled.img`
+  height: auto;
+  width: 100%;
+  object-fit: cover;
 `;
 
 const WorkCardInfo = styled.div`
@@ -66,7 +74,7 @@ const WorkCardLinks = styled.div`
 const WorkCardLink = styled.a`
   color: ${({ theme }) => theme.whitey};
   font-size: ${({ theme }) => theme.font.size.xxs};
-  margin: 8px 20px 6px 0;
+  margin: 8px 20px 12px 0;
 
   &:hover {
     cursor: pointer;
@@ -95,9 +103,9 @@ const WorkCardTech = styled.div`
 
 const TechThumbnail = styled.div`
   background: ${({ theme }) => theme.green};
-  padding: 1px 4px;
-  border-radius: 9px;
-  margin: 13px 8px 0 0;
+  padding: 3px 6px;
+  border-radius: 12px;
+  margin: 8px 10px 0 0;
   color: ${({ theme }) => theme.primary};
   font-weight: ${({ theme }) => theme.font.weight.semiBold};
   font-size: ${({ theme }) => theme.font.size.xxs};
@@ -112,10 +120,13 @@ const TechThumbnail = styled.div`
 `;
 
 const WorkCard = ({ project }) => {
-  const { name, demo, github, date, tech } = project;
+  const { name, demo, github, date, tech, img } = project;
+
   return (
     <WorkCardWrapper>
-      <WorkCardImg />
+      <WorkCardImg>
+        <WorkCardImgSample src={img} />
+      </WorkCardImg>
       <WorkCardInfo>
         <WorkCardHeader>
           <WorkCardBasic>
@@ -140,7 +151,7 @@ const WorkCard = ({ project }) => {
 
 WorkCard.propTypes = {
   project: PropTypes.objectOf(
-    PropTypes.oneOfType([PropTypes.string, PropTypes.array])
+    PropTypes.oneOfType([PropTypes.string, PropTypes.array, PropTypes.object])
   ).isRequired,
 };
 

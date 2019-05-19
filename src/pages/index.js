@@ -57,7 +57,7 @@ class IndexPage extends Component {
           anchors={['home', 'me', 'works', 'contact']}
           onLeave={(origin, destination) => this.setActive(destination.anchor)}
           afterResize={() => this.handleReload()}
-          licenseKey="MY_KEY"
+          licenseKey="353F9FAE-C0114C78-81A3C604-567CBBBD"
           responsiveWidth="796"
           // responsiveHeight="900"
           normalScrollElements=".skillsList"

@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+import { map } from 'lodash';
 import './arrowsStyle.css';
 import WorkCard from 'components/WorkCard/WorkCard';
 import { projects_wide, projects_two_cols, projects_one_col } from './Projects';
@@ -54,19 +55,13 @@ function Works() {
   return (
     <WorksWrapper>
       <HeadingBig>my works</HeadingBig>
-      {typeof window !== `undefined` && window.innerWidth >= 768
-        ? projects.map(projectObj => (
-            <Slide key={projectObj.id} className="slide">
-              {projectObj.works.map(project => (
-                <WorkCard key={project.id} project={project} />
-              ))}
-            </Slide>
-          ))
-        : projects.map(project => (
-            <Slide key={-project.id} className="slide">
-              <WorkCard key={project.id} project={project} />
-            </Slide>
+      {map(projects, projectObj => (
+        <Slide key={projectObj.id} className="slide">
+          {projectObj.works.map(project => (
+            <WorkCard key={project.id} project={project} />
           ))}
+        </Slide>
+      ))}
     </WorksWrapper>
   );
 }

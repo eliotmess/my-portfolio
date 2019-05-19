@@ -8,7 +8,7 @@ const ContactWrapper = styled.div`
   flex-direction: column;
   position: relative;
   height: 100%;
-  padding: 20vh 7vw;
+  padding: 36vh 7vw 20vh 7vw;
   font-family: ${({ theme }) => theme.font.family.nunito};
 
   ${({ theme }) => theme.mq.tablet} {
@@ -28,21 +28,22 @@ const ContactHeading = styled.h1`
   }
 `;
 
-const ContactText = styled.p`
+const ContactText = styled.div`
   color: ${({ theme }) => theme.whitey};
   font-size: ${({ theme }) => theme.font.size.xs};
-  letter-spacing: 2px;
+  word-break: break-word;
   position: relative;
 
   &::before {
     position: absolute;
-    top: 8vh;
-    bottom: 8vh;
+    top: 10vh;
+    bottom: 10vh;
     left: 0;
     border-left: 2px solid ${({ theme }) => theme.secondaryDark};
   }
 
   ${({ theme }) => theme.mq.tablet} {
+    letter-spacing: 2px;
     font-size: ${({ theme }) => theme.font.size.s};
 
     &::before {
@@ -94,13 +95,12 @@ const Footer = styled.div`
 const FooterText = styled.p`
   color: ${({ theme }) => theme.secondary};
   font-weight: ${({ theme }) => theme.font.weight.semiBold};
-  font-size: ${({ theme }) => theme.font.size.xs};
+  font-size: ${({ theme }) => theme.font.size.xxs};
   margin: 0;
   word-spacing: 3px;
 
   ${({ theme }) => theme.mq.tablet} {
-    margin-right: 7px;
-    font-size: ${({ theme }) => theme.font.size.xxs};
+    margin-right: 5px;
   }
 `;
 
@@ -149,14 +149,14 @@ const Contact = () => (
         </ContactLink>
       </ContactData>
       <ContactInfo>
-        Just leave me a message and I <em>promise</em> to answer.
+        Just leave me a message and I promise to answer.
       </ContactInfo>
     </ContactText>
     <Footer>
       <FooterText>
         made with <GatsbyLogo src={gatsby} alt="gatsby-logo" /> and 🧛{' '}
       </FooterText>
-      <FooterText>©Grzegorz Olejniczak, 2019</FooterText>
+      <FooterText>© Grzegorz Olejniczak, 2019</FooterText>
     </Footer>
     <Circle src={halfcircle} alt="halfcircle" />
   </ContactWrapper>

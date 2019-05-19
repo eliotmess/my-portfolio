@@ -1,6 +1,7 @@
 const path = require('path');
 
 module.exports = {
+  pathPrefix: '/my-portfolio',
   siteMetadata: {
     title: `G_O - portfolio`,
     description: `G_O - portfolio`,
