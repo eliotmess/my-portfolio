@@ -10,6 +10,7 @@ const WorkCardWrapper = styled.div`
   display: flex;
   flex-direction: column;
   float: left;
+  color: ${({ theme }) => theme.whitey};
 
   ${({ theme }) => theme.mq.tablet} {
     width: 48%;
@@ -22,7 +23,8 @@ const WorkCardWrapper = styled.div`
   }
 `;
 
-const WorkCardImg = styled.div`
+const WorkCardHead = styled.div`
+  position: relative;
   height: 61.8%;
   width: 100%;
   max-height: 370px;
@@ -30,31 +32,24 @@ const WorkCardImg = styled.div`
   background: ${({ theme }) => theme.primary};
 `;
 
-const WorkCardImgSample = styled.img`
+const WorkCardImg = styled.img`
   height: auto;
   width: 100%;
   object-fit: cover;
 `;
 
-const WorkCardInfo = styled.div`
+const WorkCardBody = styled.div`
   height: 38.2%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  padding: 3% 5%;
+  padding: 2% 5%;
 `;
 
-const WorkCardHeader = styled.div`
+const WorkCardInfo = styled.div`
   display: flex;
   justify-content: space-between;
   line-height: 1.6;
-  margin-top: 10px;
-`;
-
-const WorkCardBasic = styled.div`
-  display: flex;
-  flex-direction: column;
-  color: ${({ theme }) => theme.whitey};
+  margin: 3% 0 5% 0;
 `;
 
 const WorkCardName = styled.p`
@@ -69,16 +64,88 @@ const WorkCardName = styled.p`
 
 const WorkCardLinks = styled.div`
   display: flex;
+  position: absolute;
+  bottom: 10%;
+  transform: translateY(50%);
+
+  &::before {
+    content: '';
+    top: -40%;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: ${({ theme }) => theme.secondary};
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+    transition: 300ms ease-out;
+  }
+
+  &::after {
+    content: '';
+    left: 0;
+    right: 0;
+    bottom: -40%;
+    height: 50%;
+    background: ${({ theme }) => theme.secondary};
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+    transition: 300ms ease-out;
+  }
+
+  ${/* sc-selector */ WorkCardWrapper}:hover & {
+    &::before {
+      top: 0;
+      opacity: 0.65;
+      transition: 300ms ease-out;
+    }
+
+    &::after {
+      bottom: 0;
+      opacity: 0.65;
+      transition: 300ms ease-out;
+    }
+  }
+
+  ${({ theme }) => theme.mq.desktop} {
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    bottom: 50%;
+  }
 `;
 
-const WorkCardLink = styled.a`
-  color: ${({ theme }) => theme.whitey};
+const WorkCardLink = styled.button`
+  color: ${({ theme }) => theme.primary};
   font-size: ${({ theme }) => theme.font.size.xxs};
-  margin: 8px 20px 12px 0;
+  padding: 5px 0;
+  width: 60px;
+  margin: 10px 5px;
+  border: none;
+  outline: none;
+  border-radius: 30px;
+  background: ${({ theme }) => theme.green};
+  opacity: 1;
+  transition: 400ms ease-out;
 
   &:hover {
     cursor: pointer;
-    color: ${({ theme }) => theme.green};
+    font-weight: ${({ theme }) => theme.font.weight.semiBold};
+  }
+
+  ${/* sc-selector */ WorkCardWrapper}:hover & {
+    opacity: 1;
+    transition: 400ms ease-out;
+    background: ${({ theme }) => theme.pink};
+  }
+
+  ${({ theme }) => theme.mq.desktop} {
+    padding: 10px 0;
+    opacity: 0;
+    width: 200px;
   }
 
   ${({ theme }) => theme.mq.huge} {
@@ -103,9 +170,9 @@ const WorkCardTech = styled.div`
 
 const TechThumbnail = styled.div`
   background: ${({ theme }) => theme.green};
-  padding: 3px 6px;
-  border-radius: 12px;
-  margin: 8px 10px 0 0;
+  padding: 3px 9px;
+  border-radius: 24px;
+  margin: 0 8px 8px 0;
   color: ${({ theme }) => theme.primary};
   font-weight: ${({ theme }) => theme.font.weight.semiBold};
   font-size: ${({ theme }) => theme.font.size.xxs};
@@ -115,6 +182,7 @@ const TechThumbnail = styled.div`
   }
 
   ${({ theme }) => theme.mq.huge} {
+    margin: 0 12px 12px 0;
     font-size: ${({ theme }) => theme.font.size.xs};
   }
 `;
@@ -124,27 +192,29 @@ const WorkCard = ({ project }) => {
 
   return (
     <WorkCardWrapper>
-      <WorkCardImg>
-        <WorkCardImgSample src={img} />
-      </WorkCardImg>
-      <WorkCardInfo>
-        <WorkCardHeader>
-          <WorkCardBasic>
-            <WorkCardName>{name}</WorkCardName>
-            <WorkCardLinks>
-              <WorkCardLink href={demo}>demo</WorkCardLink>
-              <WorkCardLink href={github}>GitHub</WorkCardLink>
-            </WorkCardLinks>
-          </WorkCardBasic>
+      <WorkCardHead>
+        <WorkCardImg src={img} />
+        <WorkCardLinks>
+          <a href={demo}>
+            <WorkCardLink>demo</WorkCardLink>
+          </a>
+          <a href={github}>
+            <WorkCardLink>GitHub</WorkCardLink>
+          </a>
+        </WorkCardLinks>
+      </WorkCardHead>
+      <WorkCardBody>
+        <WorkCardInfo>
+          <WorkCardName>{name}</WorkCardName>
           <WorkCardDate>{date}</WorkCardDate>
-        </WorkCardHeader>
+        </WorkCardInfo>
         <WorkCardTech>
           {tech !== undefined &&
             tech.map(item => (
               <TechThumbnail key={uuid.v4()}>{item}</TechThumbnail>
             ))}
         </WorkCardTech>
-      </WorkCardInfo>
+      </WorkCardBody>
     </WorkCardWrapper>
   );
 };

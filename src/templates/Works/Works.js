@@ -29,7 +29,7 @@ const HeadingBig = styled.h1`
   margin: 0 0 10px 0;
   position: absolute;
   top: 260px;
-  left: 10vw;
+  left: 11.33vw;
 
   ${({ theme }) => theme.mq.tablet} {
     top: 12vh;
