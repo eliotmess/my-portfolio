@@ -1,7 +1,6 @@
 const path = require('path');
 
 module.exports = {
-  pathPrefix: '/my-portfolio',
   siteMetadata: {
     title: `G_O - portfolio`,
     description: `G_O - portfolio`,
@@ -55,8 +54,8 @@ module.exports = {
         name: `grzegorz-olejniczak-portfolio`,
         short_name: `portfolio`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#282a36`,
+        theme_color: `#282a36`,
         display: `minimal-ui`,
         icon: `src/assets/images/favicon.png`, // This path is relative to the root of the site.
       },

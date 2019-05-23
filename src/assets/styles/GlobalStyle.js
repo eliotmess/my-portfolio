@@ -22,6 +22,10 @@ const GlobalStyle = createGlobalStyle`
     &:hover {
       cursor: default;
     }
+    &::selection {
+      background-color: #ec7eb1;
+      color: #f8f8f2;
+    }
   }
 `;
 

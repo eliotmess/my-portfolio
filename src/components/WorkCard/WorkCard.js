@@ -49,7 +49,7 @@ const WorkCardInfo = styled.div`
   display: flex;
   justify-content: space-between;
   line-height: 1.6;
-  margin: 3% 0 5% 0;
+  margin: 3% 0 3% 0;
 `;
 
 const WorkCardName = styled.p`
@@ -95,16 +95,18 @@ const WorkCardLinks = styled.div`
   }
 
   ${/* sc-selector */ WorkCardWrapper}:hover & {
-    &::before {
-      top: 0;
-      opacity: 0.65;
-      transition: 300ms ease-out;
-    }
+    ${({ theme }) => theme.mq.desktop} {
+      &::before {
+        top: 0;
+        opacity: 0.65;
+        transition: 300ms ease-out;
+      }
 
-    &::after {
-      bottom: 0;
-      opacity: 0.65;
-      transition: 300ms ease-out;
+      &::after {
+        bottom: 0;
+        opacity: 0.65;
+        transition: 300ms ease-out;
+      }
     }
   }
 
@@ -137,9 +139,11 @@ const WorkCardLink = styled.button`
   }
 
   ${/* sc-selector */ WorkCardWrapper}:hover & {
-    opacity: 1;
-    transition: 400ms ease-out;
-    background: ${({ theme }) => theme.pink};
+    ${({ theme }) => theme.mq.desktop} {
+      opacity: 1;
+      transition: 400ms ease-out;
+      background: ${({ theme }) => theme.pink};
+    }
   }
 
   ${({ theme }) => theme.mq.desktop} {
@@ -163,6 +167,16 @@ const WorkCardDate = styled.p`
   }
 `;
 
+const WorkCardDesc = styled.p`
+  margin: 0 0 5% 0;
+  color: ${({ theme }) => theme.secondary};
+  font-size: ${({ theme }) => theme.font.size.xxs};
+
+  ${({ theme }) => theme.mq.huge} {
+    font-size: ${({ theme }) => theme.font.size.xs};
+  }
+`;
+
 const WorkCardTech = styled.div`
   display: flex;
   flex-wrap: wrap;
@@ -177,10 +191,6 @@ const TechThumbnail = styled.div`
   font-weight: ${({ theme }) => theme.font.weight.semiBold};
   font-size: ${({ theme }) => theme.font.size.xxs};
 
-  ${({ theme }) => theme.mq.wide} {
-    font-size: ${({ theme }) => theme.font.size.xxs};
-  }
-
   ${({ theme }) => theme.mq.huge} {
     margin: 0 12px 12px 0;
     font-size: ${({ theme }) => theme.font.size.xs};
@@ -188,7 +198,7 @@ const TechThumbnail = styled.div`
 `;
 
 const WorkCard = ({ project }) => {
-  const { name, demo, github, date, tech, img } = project;
+  const { name, demo, github, date, tech, img, info } = project;
 
   return (
     <WorkCardWrapper>
@@ -208,6 +218,7 @@ const WorkCard = ({ project }) => {
           <WorkCardName>{name}</WorkCardName>
           <WorkCardDate>{date}</WorkCardDate>
         </WorkCardInfo>
+        <WorkCardDesc>{info}</WorkCardDesc>
         <WorkCardTech>
           {tech !== undefined &&
             tech.map(item => (
