@@ -1,9 +1,10 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "Grzegorz_Olejniczak_Portfolio",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "My portfolio site built with Gatsby",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Grzegorz Olejniczak <olejniczak.grzes@gmail.com>",  
+  "homepage": "https://grzegorzolejniczak.com/",
   "dependencies": {
     "@fullpage/react-fullpage": "^0.1.14",
     "babel-eslint": "^10.0.1",
