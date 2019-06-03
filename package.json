@@ -3,7 +3,7 @@
   "private": true,
   "description": "My portfolio site built with Gatsby",
   "version": "0.1.0",
-  "author": "Grzegorz Olejniczak <olejniczak.grzes@gmail.com>",  
+  "author": "Grzegorz Olejniczak <olejniczak.grzes@gmail.com>",
   "homepage": "https://grzegorzolejniczak.com/",
   "dependencies": {
     "@fullpage/react-fullpage": "^0.1.14",
@@ -12,6 +12,8 @@
     "fullpage.js": "^3.0.5",
     "gatsby": "^2.4.2",
     "gatsby-image": "^2.0.41",
+    "gatsby-plugin-google-analytics": "^2.0.20",
+    "gatsby-plugin-gtag": "^1.0.11",
     "gatsby-plugin-manifest": "^2.1.1",
     "gatsby-plugin-offline": "^2.1.0",
     "gatsby-plugin-react-helmet": "^3.0.12",

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 import ReactFullpage from '@fullpage/react-fullpage';
-// import 'fullpage.js/vendors/scrolloverflow';
 import MainTemplate from 'templates/MainTemplate/MainTemplate';
 import DesktopMenu from 'components/DesktopMenu/DesktopMenu';
 import Hero from 'templates/Hero/Hero';
@@ -34,7 +33,6 @@ class IndexPage extends Component {
     return (
       <MainTemplate>
         <ReactFullpage
-          // arguments below: { state, fullpageApi }
           render={() => {
             return (
               <ReactFullpage.Wrapper>
@@ -59,10 +57,8 @@ class IndexPage extends Component {
           afterResize={() => this.handleReload()}
           licenseKey="353F9FAE-C0114C78-81A3C604-567CBBBD"
           responsiveWidth="796"
-          // responsiveHeight="900"
           normalScrollElements=".skillsList"
           continuousHorizontal
-          // scrollOverflow
         />
         <DesktopMenu active={activeSection} />
       </MainTemplate>

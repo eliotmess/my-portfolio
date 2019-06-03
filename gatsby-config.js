@@ -18,6 +18,14 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-gtag`,
+      options: {
+        trackingId: `UA-141310993-1`,
+        head: true,
+        anonymize: true,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-styled-components',
       options: {
         displayName: true,

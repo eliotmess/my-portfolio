@@ -8,6 +8,7 @@ import { projects_wide, projects_two_cols, projects_one_col } from './Projects';
 const WorksWrapper = styled.div`
   display: flex;
   align-items: space-between;
+  overflow: hidden;
   position: relative;
   padding-top: 230px;
   font-family: ${({ theme }) => theme.font.family.nunito};
@@ -45,11 +46,11 @@ function Works() {
   let projects = projects_wide;
   if (
     typeof window !== `undefined` &&
-    window.innerWidth >= 768 &&
+    window.innerWidth >= 796 &&
     window.innerWidth < 1280
   )
     projects = projects_two_cols;
-  if (typeof window !== `undefined` && window.innerWidth < 768)
+  if (typeof window !== `undefined` && window.innerWidth < 796)
     projects = projects_one_col;
 
   return (
