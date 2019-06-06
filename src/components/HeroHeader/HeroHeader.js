@@ -17,9 +17,6 @@ const HeaderName = styled.h1`
   }
 `;
 
-// text-shadow: 0 0 1px ${({ theme }) => theme.green},
-// 0 0 3px ${({ theme }) => theme.green}, 0 0 5px ${({ theme }) => theme.green};
-
 const SubHeaderRole = styled.h2`
   color: ${({ theme }) => theme.green};
   font-size: ${({ theme }) => theme.font.size.m};
@@ -53,7 +50,7 @@ function HeroHeader() {
   return (
     <HeaderWrapper>
       <HeaderName>GRZEGORZ OLEJNICZAK</HeaderName>
-      <SubHeaderRole>Front-End Developer</SubHeaderRole>
+      <SubHeaderRole>Front-end Developer</SubHeaderRole>
     </HeaderWrapper>
   );
 }
