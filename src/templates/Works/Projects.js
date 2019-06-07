@@ -7,7 +7,7 @@ export const projects_wide = [
         date: '05.2019',
         demo: 'https://pong1000000clone.herokuapp.com/',
         img: 'works/works_pong.jpg',
-        github: 'https://github.com/eliotmess/pong-clone/tree/debug_branch',
+        github: 'https://github.com/eliotmess/pong-online',
         info:
           'Working prototype of multiplayer variation on the classic Pong (also PWA).',
         id: '1',
@@ -84,7 +84,7 @@ export const projects_two_cols = [
         date: '05.2019',
         demo: 'https://pong1000000clone.herokuapp.com/',
         img: 'works/works_pong.jpg',
-        github: 'https://github.com/eliotmess/pong-clone/tree/debug_branch',
+        github: 'https://github.com/eliotmess/pong-online',
         info:
           'Working prototype of multiplayer variation on the classic Pong (also PWA).',
         id: '1',
@@ -161,7 +161,7 @@ export const projects_one_col = [
         date: '05.2019',
         demo: 'https://pong1000000clone.herokuapp.com/',
         img: 'works/works_pong.jpg',
-        github: 'https://github.com/eliotmess/pong-clone/tree/debug_branch',
+        github: 'https://github.com/eliotmess/pong-online',
         info:
           'Working prototype of multiplayer variation on the classic Pong (also PWA).',
         id: '1',
